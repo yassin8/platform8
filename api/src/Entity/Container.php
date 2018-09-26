@@ -6,13 +6,23 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Controller\ContainerStart;
+use App\Controller\ContainerCreate;
 
 /**
  * @ApiResource(itemOperations={
- *     "get"={
- *         "method"="GET",
+ *     "get",
+ *     "start"={
+ *         "method"="PUT",
  *         "path"="/containers/{id}/start",
  *         "controller"=ContainerStart::class
+ *     }
+ * },
+ * collectionOperations={
+ *     "get",
+ *     "create"={
+ *         "method"="POST",
+ *         "path"="/containers/create",
+ *         "controller"=ContainerCreate::class
  *     }
  * })
  * @ORM\Entity
