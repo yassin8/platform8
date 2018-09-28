@@ -47,10 +47,10 @@ class Container
     public $name = '';
 
     /**
-     * @var string
+     * User
      *
-     * @ORM\Column
-     * @Assert\NotBlank
+     * @ManyToOne(targetEntity="User", inversedBy="containers")
+     * @JoinColumn(name="user_id_fk", referencedColumnName="id")
      */
     public $owner = '';
 
