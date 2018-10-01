@@ -49,8 +49,8 @@ class Container
     /**
      * User
      *
-     * @ManyToOne(targetEntity="User", inversedBy="containers")
-     * @JoinColumn(name="user_id_fk", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="containers")
+     * @ORM\JoinColumn(name="user_id_fk", referencedColumnName="id")
      */
     public $owner = '';
 
